@@ -1,0 +1,32 @@
+mat-toolbar {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: lighten(black, 10%);
+  opacity: 80%;
+}
+
+button {
+  position: relative; /* Ensures absolute positioning works relative to this element */
+  margin-left: 10%;
+  color: white;
+}
+
+button::after {
+  content: ''; /* Required for pseudo-elements */
+  position: absolute;
+  left: 0;
+  bottom: -2px; /* Adjust this value to control the distance of the underline from the text */
+  width: 0;
+  height: 2px; /* Adjust this value to control the thickness of the underline */
+  background-color: white; /* Change this to the desired color of the underline */
+  transition: width 0.3s ease; /* Adjust the duration and timing function for the transition */
+}
+
+button:hover::after {
+  width: 100%; /* Fully expand the underline on hover */
+}
+
+p, mat-icon {
+
+  color: white;
+}

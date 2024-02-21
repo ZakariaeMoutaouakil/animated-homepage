@@ -1,0 +1,58 @@
+// https://codepen.io/katmai7/pen/kYoWqQ
+$bgWidth: 10000px;
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  height: 500px;
+  background: linear-gradient(to right, rgb(47, 44, 46) 0%, rgb(40, 34, 34) 19%, rgb(30, 30, 30) 40%, rgb(20, 20, 20) 60%, rgb(30, 30, 30) 83%, rgb(40, 40, 40) 100%);
+  background-size: $bgWidth 100%;
+  animation: bg 15s linear infinite;
+
+  div {
+    height: 200px;
+    background-color: rgb(40, 40, 40, 50%);
+    width: 90%;
+    padding: 2%;
+    //border: solid white;
+    border-radius: 2em;
+    color: white;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+
+    p {
+      font-size: 20px;
+    }
+
+    section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      article {
+        height: 90%;
+        position: relative;
+        width: 90%;
+        //border: solid white;
+        border-radius: 2em;
+        overflow: clip;
+
+        img {
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}
+
+@keyframes bg {
+  0% {
+    background-position-x: 0;
+  }
+
+  100% {
+    background-position-x: $bgWidth;
+  }
+}

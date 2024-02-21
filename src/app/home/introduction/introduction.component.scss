@@ -1,0 +1,71 @@
+/*
+https://codepen.io/alvarotrigo/pen/MWqqBXX
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:200');
+
+main {
+  background-image: url('https://static.pexels.com/photos/414171/pexels-photo-414171.jpeg');
+  background-size: cover;
+  -webkit-animation: slidein 100s;
+  animation: slidein 100s;
+
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
+}
+
+@-webkit-keyframes slidein {
+  from {
+    background-position: top;
+    background-size: 3000px;
+  }
+  to {
+    background-position: -100px 0px;
+    background-size: 2750px;
+  }
+}
+
+@keyframes slidein {
+  from {
+    background-position: top;
+    background-size: 3000px;
+  }
+  to {
+    background-position: -100px 0px;
+    background-size: 2750px;
+  }
+
+}
+
+
+section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: rgba(38, 35, 35, 0.78);
+  border-radius: 3px;
+  height: 700px;
+  div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    a {
+      margin-left: 5%;
+    }
+  }
+}
+
+section h1 {
+  text-align: center;
+  //transform: translateY(50%);
+  color: white;
+  font-family: 'Source Code Pro', monospace;
+  text-transform: uppercase;
+}
