@@ -1,8 +1,9 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {RouterOutlet} from '@angular/router';
 import {HeaderComponent} from "./header/header.component";
 import {HomeComponent} from "./home/home.component";
+import {Title} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-root',
@@ -11,6 +12,14 @@ import {HomeComponent} from "./home/home.component";
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent {
-  title = 'personal-website';
+export class AppComponent implements OnInit {
+  title = 'Zakariae Moutaouakil'
+
+  constructor(private titleService: Title) {
+  }
+
+  ngOnInit(): void {
+    this.titleService.setTitle(this.title)
+  }
+
 }
