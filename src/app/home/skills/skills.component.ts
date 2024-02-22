@@ -36,7 +36,7 @@ import {NgOptimizedImage} from "@angular/common";
 })
 export class SkillsComponent implements OnInit, OnDestroy {
   protected state = 'invisible'
-  protected skills: string[] = [
+  protected readonly skills: string[] = [
     'PostgreSQL',
     'Spring Boot',
     'Angular',
