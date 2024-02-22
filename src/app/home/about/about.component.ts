@@ -10,7 +10,7 @@ import {animate, state, style, transition, trigger} from "@angular/animations";
   animations: [
     trigger('state', [
       state('invisible', style({
-        transform: 'translateY(50%)',
+        transform: 'translateY(20%)',
         opacity: '10%',
         color: 'grey'
       })),
@@ -24,8 +24,9 @@ import {animate, state, style, transition, trigger} from "@angular/animations";
   ]
 })
 export class AboutComponent implements OnInit, OnDestroy {
-  observer: IntersectionObserver | undefined
-  state = 'invisible'
+  protected state = 'invisible'
+  protected aboutText = 'As a dedicated student pursuing a double major in Mathematics and Computer Science, I bring a strong foundation in pure mathematics coupled with a passion for the dynamic world of web development. With a rigorous background in mathematics, I am adept at tackling complex problems with logical precision and analytical thinking. However, my true enthusiasm lies in the realm of web development, where I thrive on the creative challenge of bringing ideas to life through code. Whether exploring algorithms or crafting elegant user interfaces, I am constantly seeking to expand my knowledge and skills at the intersection of mathematics and technology, driven by a curiosity to discover innovative solutions and make meaningful contributions to the digital landscape.'
+  private observer: IntersectionObserver | undefined
 
   constructor(private elementRef: ElementRef) {
   }

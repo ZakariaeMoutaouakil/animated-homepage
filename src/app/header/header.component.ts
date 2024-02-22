@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {MatToolbar} from "@angular/material/toolbar";
-import {MatButton} from "@angular/material/button";
+import {MatAnchor, MatButton} from "@angular/material/button";
 import {MatIcon} from "@angular/material/icon";
 
 @Component({
@@ -9,11 +9,15 @@ import {MatIcon} from "@angular/material/icon";
   imports: [
     MatToolbar,
     MatButton,
-    MatIcon
+    MatIcon,
+    MatAnchor
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
 
+  protected readonly location = location;
+  protected readonly window = window;
+  protected readonly document = document;
 }

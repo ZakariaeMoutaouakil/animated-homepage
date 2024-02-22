@@ -1,18 +1,21 @@
 // https://codepen.io/katmai7/pen/kYoWqQ
+//@import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+
 $bgWidth: 10000px;
 main {
+  font-family: "Montserrat", sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   color: white;
-  height: 500px;
+  //height: 500px;
   background: linear-gradient(to right, rgb(47, 44, 46) 0%, rgb(40, 34, 34) 19%, rgb(30, 30, 30) 40%, rgb(20, 20, 20) 60%, rgb(30, 30, 30) 83%, rgb(40, 40, 40) 100%);
   background-size: $bgWidth 100%;
   animation: bg 15s linear infinite;
 
   div {
-    height: 200px;
+    //height: 200px;
     background-color: rgb(40, 40, 40, 50%);
     width: 90%;
     padding: 2%;
@@ -21,15 +24,17 @@ main {
     color: white;
     display: grid;
     grid-template-columns: repeat(2, 50%);
+    margin-bottom: 1%;
 
     p {
-      font-size: 20px;
+      font-size: 15px;
     }
 
     section {
       display: flex;
       justify-content: center;
       align-items: center;
+      flex-direction: column;
 
       article {
         height: 90%;
@@ -42,6 +47,12 @@ main {
         img {
           object-fit: cover;
         }
+      }
+
+      blockquote {
+        display: flex;
+        width: 100%;
+        justify-content: left;
       }
     }
   }
@@ -56,3 +67,114 @@ main {
     background-position-x: $bgWidth;
   }
 }
+
+
+// https://codepen.io/nuhmanpk/pen/XWqBrae
+
+button {
+  position: relative;
+  background: #444;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  border: none;
+  letter-spacing: 0.1rem;
+  font-size: 1rem;
+  padding: 1rem 3rem;
+  transition: 0.2s;
+}
+
+button:hover {
+  letter-spacing: 0.2rem;
+  padding: 1.1rem 3.1rem;
+  background: var(--clr);
+  color: var(--clr);
+  /* box-shadow: 0 0 35px var(--clr); */
+  animation: box 3s infinite;
+
+  a {
+    color: #0FF0FC
+  }
+}
+
+button::before {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  background: #272822;
+}
+
+button a {
+  position: relative;
+  z-index: 1;
+  text-decoration: none;
+  color: white;
+}
+
+button i {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+
+button i::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 2px;
+  left: 80%;
+  top: -2px;
+  border: 2px solid var(--clr);
+  background: #272822;
+  transition: 0.2s;
+}
+
+button:hover i::before {
+  width: 15px;
+  left: 20%;
+  animation: move 3s infinite;
+}
+
+button i::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 2px;
+  left: 20%;
+  bottom: -2px;
+  border: 2px solid var(--clr);
+  background: #272822;
+  transition: 0.2s;
+}
+
+button:hover i::after {
+  width: 15px;
+  left: 80%;
+  animation: move 3s infinite;
+}
+
+@keyframes move {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes box {
+  0% {
+    box-shadow: #27272c;
+  }
+  50% {
+    box-shadow: 0 0 25px var(--clr);
+  }
+  100% {
+    box-shadow: #27272c;
+  }
+}
+
+

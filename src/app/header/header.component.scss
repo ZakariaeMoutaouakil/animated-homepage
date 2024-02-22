@@ -5,13 +5,13 @@ mat-toolbar {
   opacity: 80%;
 }
 
-button {
+button, a {
   position: relative; /* Ensures absolute positioning works relative to this element */
   margin-left: 10%;
   color: white;
 }
 
-button::after {
+button::after, a::after {
   content: ''; /* Required for pseudo-elements */
   position: absolute;
   left: 0;
@@ -22,7 +22,7 @@ button::after {
   transition: width 0.3s ease; /* Adjust the duration and timing function for the transition */
 }
 
-button:hover::after {
+button:hover::after, a:hover::after {
   width: 100%; /* Fully expand the underline on hover */
 }
 

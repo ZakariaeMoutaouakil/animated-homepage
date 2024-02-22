@@ -1,7 +1,8 @@
-import {Component, ElementRef, OnDestroy, OnInit} from '@angular/core';
+import {Component, ElementRef, OnDestroy, OnInit, signal} from '@angular/core';
 import {MatCard, MatCardContent, MatCardFooter} from "@angular/material/card";
 import {MatProgressBar} from "@angular/material/progress-bar";
 import {animate, state, style, transition, trigger} from "@angular/animations";
+import {NgOptimizedImage} from "@angular/common";
 
 @Component({
   selector: 'app-skills',
@@ -10,7 +11,8 @@ import {animate, state, style, transition, trigger} from "@angular/animations";
     MatCard,
     MatCardContent,
     MatProgressBar,
-    MatCardFooter
+    MatCardFooter,
+    NgOptimizedImage
   ],
   templateUrl: './skills.component.html',
   styleUrl: './skills.component.scss',
@@ -33,9 +35,17 @@ import {animate, state, style, transition, trigger} from "@angular/animations";
   ]
 })
 export class SkillsComponent implements OnInit, OnDestroy {
-  observer: IntersectionObserver | undefined
-  state = 'invisible'
-  states: string[] = new Array(4).fill('invisible')
+  protected state = 'invisible'
+  protected skills: string[] = [
+    'PostgreSQL',
+    'Spring Boot',
+    'Angular',
+    'Docker',
+    'Ionic',
+    'AI'
+  ]
+  protected value = signal<number>(0)
+  private observer: IntersectionObserver | undefined
 
   constructor(private elementRef: ElementRef) {
   }
@@ -50,9 +60,11 @@ export class SkillsComponent implements OnInit, OnDestroy {
         if (entry.isIntersecting) {
           // Do something when the component is visible
           this.state = 'visible'
+          this.value.set(100)
         } else {
           // Do something when the component is not visible
           this.state = 'invisible'
+          this.value.set(0)
         }
       });
     }, {
