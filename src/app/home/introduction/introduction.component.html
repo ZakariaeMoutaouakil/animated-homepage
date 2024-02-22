@@ -4,13 +4,15 @@
       {{ !isFinished() ? message() + '|' : message() }}
     </h1>
     <div>
-      <a mat-raised-button
+      <a [@state]="state"
          color="primary"
          href="https://www.google.com/"
+         mat-raised-button
          target="_blank">Github</a>
-      <a mat-raised-button
+      <a [@state]="state"
          color="primary"
          href="https://www.google.com/"
+         mat-raised-button
          target="_blank">LinkedIn</a>
     </div>
   </section>
