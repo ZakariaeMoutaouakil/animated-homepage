@@ -27,6 +27,12 @@ button:hover::after, a:hover::after {
 }
 
 p, mat-icon {
-
   color: white;
+}
+
+@media screen and (max-width: 700px) {
+  /* CSS rules for small screens */
+  section {
+    display: none;
+  }
 }
